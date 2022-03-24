@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Get started with Twilio Integrated Alerts!</title>
+
+        <link rel="icon" href="https://twilio-labs.github.io/function-templates/static/v1/favicon.ico">
+        <link rel="stylesheet" href="https://twilio-labs.github.io/function-templates/static/v1/ce-paste-theme.css">
+        <script src="https://twilio-labs.github.io/function-templates/static/v1/ce-helpers.js" defer></script>
+        <script>
+         window.addEventListener('DOMContentLoaded', (_event) => {
+             inputPrependBaseURL();
+         });
+        </script>
+    </head>
+    <body>
+        <div class="page-top">
+            <header>
+                <div id="twilio-logo">
+                    <a href="https://www.twilio.com/" target="_blank" rel="noopener">
+                        <svg class="logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 60 60">
+                            <title>Twilio Logo</title><path class="cls-1" d="M30,15A15,15,0,1,0,45,30,15,15,0,0,0,30,15Zm0,26A11,11,0,1,1,41,30,11,11,0,0,1,30,41Zm6.8-14.7a3.1,3.1,0,1,1-3.1-3.1A3.12,3.12,0,0,1,36.8,26.3Zm0,7.4a3.1,3.1,0,1,1-3.1-3.1A3.12,3.12,0,0,1,36.8,33.7Zm-7.4,0a3.1,3.1,0,1,1-3.1-3.1A3.12,3.12,0,0,1,29.4,33.7Zm0-7.4a3.1,3.1,0,1,1-3.1-3.1A3.12,3.12,0,0,1,29.4,26.3Z"/></svg>
+                    </a>
+                </div>
+                <nav>
+                    <span>Twilio Integrated Alerts</span>
+                    <aside>
+                        <svg class="icon" role="img" aria-hidden="true" width="100%" height="100%" viewBox="0 0 20 20" aria-labelledby="NewIcon-1577"><path fill="currentColor" fill-rule="evenodd" d="M6.991 7.507c.003-.679 1.021-.675 1.019.004-.012 2.956 1.388 4.41 4.492 4.48.673.016.66 1.021-.013 1.019-2.898-.011-4.327 1.446-4.48 4.506-.033.658-1.01.639-1.018-.02-.03-3.027-1.382-4.49-4.481-4.486-.675 0-.682-1.009-.008-1.019 3.02-.042 4.478-1.452 4.49-4.484zm.505 2.757l-.115.242c-.459.9-1.166 1.558-2.115 1.976l.176.08c.973.465 1.664 1.211 2.083 2.22l.02.05.088-.192c.464-.973 1.173-1.685 2.123-2.124l.039-.018-.118-.05c-.963-.435-1.667-1.117-2.113-2.034l-.068-.15zm10.357-8.12c.174.17.194.434.058.625l-.058.068-1.954 1.905 1.954 1.908a.482.482 0 010 .694.512.512 0 01-.641.056l-.07-.056-1.954-1.908-1.954 1.908a.511.511 0 01-.71 0 .482.482 0 01-.058-.626l.058-.068 1.954-1.908-1.954-1.905a.482.482 0 010-.693.512.512 0 01.64-.057l.07.057 1.954 1.905 1.954-1.905a.511.511 0 01.71 0z"></path></svg>
+                        Live
+                    </aside>
+                </nav>
+            </header>
+        </div>
+        <main>
+            <div class="content">
+                <h1>
+                    <div>
+                        <p>Welcome to Twilio Integrated Alerts!</p>
+                    </div>
+                </h1>
+                <section>
+                    <h2>Integrating with New Relic</h2>
+                    <p>
+                        Configure the New Relic endpoint as an alerting channel to get SMS notifications when a new incident is opened.
+                    </p>
+                    <form>
+                                <label for="twilio-webhook">Your New Relic endpoint: </label>
+                                <input type="text" id="twilio-webhook" class="function-root" readonly=true value="/newrelic?number=447800000012">
+                            </form>
+                    <ol class="steps">
+                        <li> 
+                            Add your SID for your Messaging Service in this functions Environment Variables and click update
+                        </li>
+                        <li><a href="https://one.newrelic.com/nrai/alerts-classic/channels" target="_blank">Add a new New Relic notification channel</a></li>
+                        <li>
+                            Choose <i>Webhook</i> as the channel type
+                        </li>
+                        <li>
+                            Give your channel a name and add the above URL as <i>Base URL</i>
+                        </li>
+                        <li>
+                            Save and send a test notification. You are now done! Add this to alert policies you want to receive SMS notifications about
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Integrating with Cisco AppDynamics</h2>
+                    <p>
+                        Configure the Splunk endpoint as an alert webhook to get SMS notifications when a new incident is opened.
+                    </p>
+                    <form>
+                                <label for="twilio-webhook">Your Cisco AppDynamics endpoint: </label>
+                                <input type="text" id="twilio-webhook" class="function-root" readonly=true value="/cisco-appd?number=+447800000012">
+                            </form>
+                    <ol class="steps">
+                        <li> 
+                            Add your SID for your Messaging Service in this functions Environment Variables and click update
+                        </li>
+                        <li>In the Splunk administration pannel, nevigate to <i>Alert Webhooks</i> and select <i>New</i></li>
+                        <li>
+                            Give your Custom Alert Webhook a name and add the above URL as <i>Webhook URL</i> for any of the triggers that you configure
+                        </li>
+                        <li>
+                            Click <i>test</i> to check everything is working fine. You are now done! Add this to any alert triggers you want to receive SMS notifications about
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Integrating with Splunk</h2>
+                    <p>
+                        Configure the Splunk endpoint as an alert webhook to get SMS notifications when a new incident is opened.
+                    </p>
+                    <form>
+                                <label for="twilio-webhook">Your Splunk endpoint: </label>
+                                <input type="text" id="twilio-webhook" class="function-root" readonly=true value="/splunk?number=+447800000012">
+                            </form>
+                    <ol class="steps">
+                        <li> 
+                            Add your SID for your Messaging Service in this functions Environment Variables and click update
+                        </li>
+                        <li>In the Splunk administration pannel, nevigate to <i>Alert Webhooks</i> and select <i>New</i></li>
+                        <li>
+                            Give your Custom Alert Webhook a name and add the above URL as <i>Webhook URL</i> for any of the triggers that you configure
+                        </li>
+                        <li>
+                            Click <i>test</i> to check everything is working fine. You are now done! Add this to any alert triggers you want to receive SMS notifications about
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Make the application your own</h2>
+                    <p>
+                        You might want to customise the behaviour of this application. One such item might be how an SMS is sent. Feel free to edit the code how you see fit.
+                        <br /><br />
+                        Another important factor is the security for any triggering webhook - you might consider adding a passphrase on the client and server side, for an added layer of protection.
+                    </p>
+<form>
+    
+    <div style="align-self: start; display: inline-block;">
+        <div style="display:flex; justify-content:center; padding:1rem 0;">
+            <a target="_blank" href="https://www.twilio.com/console/functions/editor/ZS554f02ed61708de2cf13e3a04fc0de58/environment/ZE7d3cdb4ac60633e9b7658f93e1d95efb/config/variables?app_title=twilio-integrated-alerts"
+                style="
+                        background-color: white;
+                        color:  rgb(2, 99, 224);
+                        border: 1px solid rgb(2, 99, 224);
+                        border-radius: 4px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        padding: 6px 12px;"
+            >Edit this application</a>
+        </div>
+    </div>
+</form>
+                </section>
+                <section>
+                    <h2>Troubleshooting</h2>
+                    <ul>
+                        <li>
+                            Check the
+                            <a href="https://www.twilio.com/console/phone-numbers/incoming"
+                               target="_blank"
+                               rel="noopener">
+                                messaging service configuration
+                            </a>
+                            and make sure the Twilio messaging service you want for your app has valid senders
+                            and matches the SID you added in Environment Variables.
+                            <br /> <br />
+                            You might also find some useful information in the <a href="https://console.twilio.com/us1/monitor/logs/sms?frameUrl=%2Fconsole%2Fsms%2Flogs">Messaging Logs</a> and/or the <a href="https://console.twilio.com/us1/monitor/logs/debugger/events?frameUrl=%2Fconsole%2Fdebugger">Error logs</a> sections under <i>Monitor</i> in the Twilio Console.
+                            <form>
+                                <label for="twilio-webhook">Webhook URL</label>
+                                <input type="text" id="twilio-webhook" class="function-root" readonly=true value="/">
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <span class="statement">We can't wait to see what you build.</span>
+        </footer>
+    </body>
+</html>
